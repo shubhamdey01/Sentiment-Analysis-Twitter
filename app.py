@@ -29,7 +29,8 @@ def sentimentAnalysis(inputData):
     return prediction[0]
     
 def main():
-    st.title('Tweet Sentiment Analysis')
+    st.set_page_config(page_title="Sentiment Analysis")
+    st.title('Sentiment Analysis : Twitter')
     tweet = st.text_input('Tweet to analyze')
     tweet = stemVectorize(tweet)
     if st.button('Analyze'):
