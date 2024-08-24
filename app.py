@@ -73,6 +73,7 @@ def main():
     tweet = st.text_area('Tweet to analyze', height=200)
 
     # making prediction
+    downloadResources()
     tweet = preprocessData(tweet)
     tweet = vectorizer.transform([tweet])
 
