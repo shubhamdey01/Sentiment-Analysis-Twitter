@@ -4,6 +4,7 @@ from nltk import word_tokenize
 from nltk.stem.porter import PorterStemmer
 import streamlit as st
 import nltk
+nltk.download('punkt_tab')
 
 # loading trained model
 vectorizer = pickle.load(open('models/vectorizer.pkl', 'rb'))
@@ -18,12 +19,7 @@ url = r'((http://)[^ ]*|(https://)[^ ]*|( www\.)[^ ]*)'
 user = r'@[^\s]+'
 alpha = r'[^a-zA-Z]'
 seq = r'(.)\1\1+'
-seqReplace = r'\1\1'
-
-# Cache the download of NLTK resources
-@st.cache_resource
-def downloadResources():
-    nltk.download('punkt_tab')
+seqReplace = r'\1\1'    
 
 def preprocessData(text):
     # lowercasing
