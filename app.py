@@ -25,6 +25,7 @@ seqReplace = r'\1\1'
 def downloadResources():
     nltk.download('punkt_tab')
 
+downloadResources()
 def preprocessData(text):
     # lowercasing
     text = text.lower()
