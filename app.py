@@ -25,7 +25,6 @@ seqReplace = r'\1\1'
 def downloadResources():
     nltk.download('punkt_tab')
 
-downloadResources()
 def preprocessData(text):
     # lowercasing
     text = text.lower()
@@ -74,6 +73,7 @@ def main():
     tweet = st.text_area('Tweet to analyze', height=200)
 
     # making prediction
+    downloadResources()
     tweet = preprocessData(tweet)
     tweet = vectorizer.transform([tweet])
 
